@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;650;800&family=Plus+Jakarta+Sans:wght@400;500;600;750&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-blue-dark: #0D3B8E;
+  --color-brand-blue-med: #2D8CFF;
+  --color-brand-blue-light: #5BB9FF;
+  --color-brand-green: #6BCB3D;
+  --color-brand-yellow: #FFD633;
+  --color-brand-orange: #FF8A00;
+  --color-brand-coral: #F24C5A;
+  --color-brand-purple: #C86DD7;
+  --color-brand-beige: #F2D6B3;
+  --color-brand-gray-light: #F5F5F5;
+  --color-brand-gray-medium: #D9D9D9;
+
+  /* legacy aliases mapped to the new palette for safe building */
+  --color-brand-pink: #C86DD7;
+  --color-brand-red: #F24C5A;
+}
+
+/* Custom kid-card style resembling the uploaded materials: white back with thick colored borders and interior dashes */
+.kid-card-pink {
+  border: 8px solid #C86DD7;
+  border-radius: 24px;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(200, 109, 215, 0.1);
+}
+.kid-card-pink::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #C86DD7;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.kid-card-red {
+  border: 8px solid #F24C5A;
+  border-radius: 24px;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(242, 76, 90, 0.1);
+}
+.kid-card-red::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #F24C5A;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.kid-card-green {
+  border: 8px solid #6BCB3D;
+  border-radius: 24px;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(107, 203, 61, 0.1);
+}
+.kid-card-green::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #6BCB3D;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.kid-card-blue {
+  border: 8px solid #2D8CFF;
+  border-radius: 24px;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(45, 140, 255, 0.1);
+}
+.kid-card-blue::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #2D8CFF;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.kid-card-orange {
+  border: 8px solid #FF8A00;
+  border-radius: 24px;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.1);
+}
+.kid-card-orange::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #FF8A00;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+/* Custom visual styles for child friendly soft tactile learning */
+.bubble-pulse {
+  animation: soft-pulse 3s infinite ease-in-out;
+}
+
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 4px 6px rgba(230, 0, 0, 0.15));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 10px 15px rgba(255, 0, 127, 0.25));
+  }
+}

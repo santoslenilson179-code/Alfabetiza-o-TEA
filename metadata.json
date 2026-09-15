@@ -1,0 +1,6 @@
+{
+  "name": "Alfabetização para Crianças Autistas",
+  "description": "Um método acolhedor, visual e adaptado para ajudar seu filho a dar os primeiros passos na leitura e escrita.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
