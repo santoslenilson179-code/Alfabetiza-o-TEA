@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
-  Heart, Sparkles, AlertCircle, Check, HelpCircle, 
-  ChevronDown, ChevronUp, Star, Printer, BookOpen, 
+  Heart, AlertCircle, Check, HelpCircle, 
+  ChevronDown, ChevronUp, Printer, BookOpen, 
   Download, ShieldCheck, Mail, ArrowRight, Lightbulb, 
   Smile, UserCheck, Accessibility, Laptop, Volume2, Award
 } from 'lucide-react';
 
-import { TESTIMONIALS, FAQS } from './data';
-import MaterialPreview from './components/MaterialPreview';
-import InteractiveQuiz from './components/InteractiveQuiz';
+import { FAQS } from './data';
 import CheckoutSimulator from './components/CheckoutSimulator';
 // @ts-ignore
 import heroImage from './assets/images/metodo_abc_banner_1781285707745.jpg';
@@ -31,8 +29,8 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-brand-blue-med/15 selection:text-brand-blue-dark overflow-x-hidden">
       
       {/* Upper Micro-Banner for trust */}
-      <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue-med to-brand-purple text-white text-center py-2.5 px-4 text-xs font-bold tracking-wide">
-        🚀 Oferta Especial de Lançamento por Tempo Limitado: De <span className="line-through opacity-85">R$ 197</span> por apenas <strong>R$ 27 (Pagamento Único)</strong>
+      <div className="bg-gradient-to-r from-brand-blue-dark via-brand-blue-med to-brand-purple text-white text-center py-2.5 px-4 text-xs md:text-sm font-medium tracking-wide">
+        💔 Seu filho tem dificuldade para aprender e você já não sabe mais como ajudá-lo em casa?
       </div>
 
       {/* Navigation Brand Header */}
@@ -65,12 +63,8 @@ export default function App() {
           
           {/* Headline / Title block */}
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-1.5 bg-brand-blue-med/10 border border-brand-blue-med/20 text-brand-blue-dark py-1.5 px-3 rounded-full text-xs font-bold uppercase animate-pulse">
-              <Sparkles className="w-3.5 h-3.5 text-brand-blue-med fill-brand-blue-med/20" /> Método ABC Acolhedor e Colorido
-            </div>
-
             <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-brand-blue-dark tracking-tight leading-tight max-w-3xl mx-auto">
-              Mais de 1200 atividades para a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-med via-brand-purple to-brand-coral">Alfabetização de Crianças Autistas</span>
+              🧩 Seu filho se frustra ou perde o interesse na <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-med via-brand-purple to-brand-coral">hora de aprender?</span>
             </h1>
 
             <p className="text-slate-600 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
@@ -96,21 +90,14 @@ export default function App() {
 
           {/* Large conversion controls */}
           <div className="w-full flex flex-col items-center space-y-4">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xl">
+            <div className="flex justify-center w-full max-w-md">
               <button
                 onClick={() => triggerCheckout('Completo')}
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white text-sm md:text-base font-black px-8 py-4 rounded-xl shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/30 transition-all text-center flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white text-sm md:text-base font-black px-8 py-4 rounded-xl shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/30 transition-all text-center flex items-center justify-center gap-2 cursor-pointer w-full"
               >
                 [QUERO AJUDAR MEU FILHO A SE ALFABETIZAR]
                 <ArrowRight className="w-4 h-4" />
               </button>
-              
-              <a
-                href="#preview-section"
-                className="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-6 py-4 rounded-xl text-center shadow-xs transition cursor-pointer text-sm md:text-base flex items-center justify-center"
-              >
-                Ver Amostra Grátis
-              </a>
             </div>
 
             <p className="text-xs text-slate-400 font-medium">
@@ -164,13 +151,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* INTERACTIVE PREVIEW PLATFORM (SENSORY PLAY PREVIEW) */}
-      <section className="py-16 md:py-24 px-6 bg-slate-50 text-slate-800 border-y border-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <MaterialPreview />
-        </div>
-      </section>
-
       {/* THE VALUE VALUE PROPOSITION & CRITICAL SYLLABUS SECTION */}
       <section className="py-16 md:py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -188,76 +168,39 @@ export default function App() {
           </div>
 
           {/* Grid of learning pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-orange/15 text-brand-orange font-bold rounded-xl flex items-center justify-center text-xl mb-4">🔤</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">Letras e Sons Mágicos</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Aprender o abecedário através de associação direta de alta conformidade fônica e correspondência de desenhos limpos.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-orange/15 text-brand-orange font-bold rounded-xl flex items-center justify-center text-xl shrink-0">🔤</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">Letras e Sons Mágicos</h3>
             </div>
 
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-blue-med/15 text-brand-blue-med font-bold rounded-xl flex items-center justify-center text-xl mb-4">🧩</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">União de Sílabas e Palavras</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Atividades de arrastar e colar imagens para formar pequenos blocos de sílabas básicas fáceis de assimilar visualmente.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-blue-med/15 text-brand-blue-med font-bold rounded-xl flex items-center justify-center text-xl shrink-0">🧩</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">União de Sílabas e Palavras</h3>
             </div>
 
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-purple/15 text-brand-purple font-bold rounded-xl flex items-center justify-center text-xl mb-4">📖</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">Leitura Gradual Auxiliada</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Pequenas histórias curtas e simples de linha única projetadas com baixo estresse cognitivo para prender a autoconfiança de ler sozinho.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-purple/15 text-brand-purple font-bold rounded-xl flex items-center justify-center text-xl shrink-0">📖</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">Leitura Gradual Auxiliada</h3>
             </div>
 
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-coral/15 text-brand-coral font-bold rounded-xl flex items-center justify-center text-xl mb-4">✍️</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">Coordenação Motora Fina</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Gabaritos pontilhados generosos de animais para cobrir, ajudando a treinar a preensão de lápis e movimentos de escrita fundamentais.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-coral/15 text-brand-coral font-bold rounded-xl flex items-center justify-center text-xl shrink-0">✍️</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">Coordenação Motora Fina</h3>
             </div>
 
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-green/15 text-brand-green font-bold rounded-xl flex items-center justify-center text-xl mb-4">🐱</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">Ampliação de Vocabulário</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Pareamento prático do cotidiano: cores, brinquedos, alimentos, e animais domésticos para expandir canais de comunicação verbal e sinalizada.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-green/15 text-brand-green font-bold rounded-xl flex items-center justify-center text-xl shrink-0">🐱</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">Ampliação de Vocabulário</h3>
             </div>
 
-            <div className="bg-white border border-brand-blue-med/10 p-6 rounded-2xl transition hover:shadow-md">
-              <div className="w-10 h-10 bg-brand-blue-light/15 text-brand-blue-dark font-bold rounded-xl flex items-center justify-center text-xl mb-4">🧠</div>
-              <h3 className="font-display font-bold text-brand-blue-dark text-base mb-2">Foco e Regulação Mental</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Exercícios tranquilos baseados em rituais pedagógicos claros de início, meio e fim para apoiar e fortalecer a neurodiversidade TEA.
-              </p>
+            <div className="bg-white border border-brand-blue-med/10 p-5 rounded-2xl transition hover:shadow-md flex items-center gap-4">
+              <div className="w-11 h-11 bg-brand-blue-light/15 text-brand-blue-dark font-bold rounded-xl flex items-center justify-center text-xl shrink-0">🧠</div>
+              <h3 className="font-display font-bold text-brand-blue-dark text-base leading-snug">Foco e Regulação Mental</h3>
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* DIAGNOSTIC PORTAL (INTERACTIVE USER QUIZ) */}
-      <section className="py-16 md:py-24 px-6 bg-gradient-to-br from-slate-900 via-brand-blue-dark/20 to-slate-950 text-white relative">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="bg-brand-blue-med/20 text-brand-blue-light border border-brand-blue-med/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              Diagnóstico Exclusivo
-            </span>
-            <h2 className="font-display font-black text-2xl md:text-3xl mt-3 text-white tracking-tight leading-tight">
-              Faça a Triagem Pedagógica Rápida
-            </h2>
-            <p className="text-slate-405 text-slate-400 text-xs md:text-sm mt-2">
-              Descubra qual caderno do kit corresponde perfeitamente ao progresso sensorial e intelectual atual do seu pequeno.
-            </p>
-          </div>
-
-          <InteractiveQuiz onOpenCheckout={triggerCheckout} />
         </div>
       </section>
 
@@ -563,52 +506,6 @@ export default function App() {
               <span className="flex items-center gap-1">🔒 Chave Pix Oficial</span>
               <span className="flex items-center gap-1">🛡️ Reembolso Rápido</span>
             </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* PARENT & THERAPIST TESTIMONIALS */}
-      <section className="py-16 md:py-24 px-6 bg-slate-100 text-slate-850">
-        <div className="max-w-5xl mx-auto">
-          
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="text-brand-purple text-xs font-bold uppercase tracking-wider bg-brand-purple/10 px-3 py-1 rounded-full">
-              Histórias de Amor e Sucesso
-            </span>
-            <h2 className="font-display font-black text-3xl text-brand-blue-dark mt-3 tracking-tight">
-              Famílias Que Sentiram a Mudança na Pele
-            </h2>
-            <p className="text-slate-500 text-sm mt-2">
-              Veja as declarações sinceras de quem já ensinou ou usou em consultório de apoio.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((col) => (
-              <div key={col.id} className="bg-white p-6 rounded-2xl border border-slate-150 shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="flex gap-0.5 text-amber-500 mb-3">
-                    {[...Array(col.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-slate-655 text-slate-600 leading-relaxed italic mb-4">
-                    "{col.text}"
-                  </p>
-                </div>
-                
-                <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
-                  <div className={`w-9 h-9 rounded-full ${col.avatarColor} text-white font-extrabold flex items-center justify-center text-xs`}>
-                    {col.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-brand-blue-dark">{col.name}</h5>
-                    <p className="text-[10px] text-slate-450">{col.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
 
         </div>
