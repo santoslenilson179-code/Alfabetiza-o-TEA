@@ -11,6 +11,8 @@ import { FAQS } from './data';
 import CheckoutSimulator from './components/CheckoutSimulator';
 // @ts-ignore
 import heroImage from './assets/images/metodo_abc_banner_1781285707745.jpg';
+// @ts-ignore
+import depoimentoImage from './assets/images/depoimento_mae_filho_1790190217339.jpg';
 
 export default function App() {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -331,19 +333,18 @@ export default function App() {
         </div>
       </section>
 
-      {/* METODO VISUAL SPOTLIGHT SECTION WITH IMAGE */}
+      {/* METODO VISUAL SPOTLIGHT SECTION */}
       <section className="py-16 md:py-24 px-6 bg-white border-y border-brand-blue-med/10">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
           
-          <div className="w-full md:w-1/2 order-2 md:order-1">
-            <div className="relative">
-              <div className="absolute inset-0 bg-brand-blue-med/10 rounded-full blur-3xl -z-10 transform scale-110"></div>
-              <div className="border-8 border-white bg-white rounded-3xl overflow-hidden shadow-2xl transition duration-300 hover:scale-[1.02]">
+          <div className="w-full md:w-1/2 order-2 md:order-1 flex justify-center">
+            <div className="relative group max-w-sm sm:max-w-md w-full">
+              <div className="absolute -inset-1 bg-gradient-to-r from-brand-blue-med to-brand-purple rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition duration-700"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[4/3]">
                 <img
-                  src={heroImage}
-                  alt="Cartaz do Método ABC"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-auto object-cover"
+                  src={depoimentoImage}
+                  alt="Mãe e filho estudando juntos com o Método ABC"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -351,13 +352,13 @@ export default function App() {
 
           <div className="w-full md:w-1/2 order-1 md:order-2 space-y-6 text-left">
             <span className="bg-brand-blue-med/15 text-brand-blue-dark border border-brand-blue-med/25 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider inline-block">
-              Metodologia de Alta Eficácia
+              Método Prático e Comprovado
             </span>
             <h2 className="font-display font-black text-3xl md:text-4xl text-brand-blue-dark tracking-tight leading-tight">
-              O Método ABC com Estímulo Visual e Foco Sensorial
+              Veja Como a Alfabetização Fica Leve e Divertida em Casa
             </h2>
             <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-              Como ilustrado em nosso material oficial, cada página do kit foi projetada meticulosamente para eliminar ruídos e facilitar a fixação da atenção. Ao aliar grandes letras legíveis a animais fofos com correspondência fonética direta, as barreiras de ansiedade dão lugar a um progresso leve, rápido e contínuo.
+              O Método ABC transforma o momento de aprendizagem em pura conexão e alegria, eliminando a sobrecarga cognitiva e prendendo a atenção com estímulo visual acolhedor e positivo.
             </p>
             
             <div className="space-y-4 pt-2">
@@ -365,15 +366,15 @@ export default function App() {
                 <span className="text-2xl mt-0.5">🎨</span>
                 <div>
                   <h4 className="text-sm font-bold text-brand-blue-dark">Estética Calibrada e Limpa</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">Layouts sem distrações desnecessárias ou excesso de estampas complexas, focando apenas na recompensa cognitiva direta e no progresso suave.</p>
+                  <p className="text-xs text-slate-500 leading-relaxed">Layouts sem distrações desnecessárias ou poluição visual, focando no que realmente importa: a compreensão e a segurança do seu filho.</p>
                 </div>
               </div>
               
               <div className="flex gap-3">
                 <span className="text-2xl mt-0.5">🐝</span>
                 <div>
-                  <h4 className="text-sm font-bold text-brand-blue-dark">Pareamento Fônico de Alta Conformidade</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">Associações táteis e sonoras instantâneas que estimulam canais de linguagem verbal e reflexos lógicos essenciais para a neurodiversidade.</p>
+                  <h4 className="text-sm font-bold text-brand-blue-dark">Pareamento Fônico e Visual Adaptado</h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">Associações práticas com desenhos amigáveis (como a abelha na letra A) que aceleram a autonomia de leitura e a coordenação motora.</p>
                 </div>
               </div>
             </div>
